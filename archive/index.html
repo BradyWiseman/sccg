@@ -1,52 +1,34 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Spring Creek Garden</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Monitor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        img { max-width: 25%; height: auto; }
+        #data { margin-top: 20px; font-size: 18px; }
+    </style>
 </head>
 <body>
-	<h1>Spring Creek Garden Data Monitor</h1>
-	<p>Sunken greenhouse temp: <span id="sunkenghtemp">--</span> °F</p>
-	<p>Sunken greenhouse fan: <span id="sunkenghfan">--</span> </p>
-	<p>Sunken greenhouse vent: <span id="sunkenghvent">--</span> % Open</p>			    
-   <p>Little greenhouse temp: <span id="littleghtemp">--</span> °F</p>
-   <p>Little greenhouse fan: <span id="littleghfan">--</span> </p>
-   <p>Little greenhouse vent: <span id="littleghvent">--</span> </p>
-   <p>Hoop greenhouse temp: <span id="hoopghtemp">--</span> °F</p>
-   <p>Hoop greenhouse humidity: <span id="hoopghrh">--</span> %</p>
-   <p>Pump house temp: <span id="pumptemp">--</span> °F</p>
-   <p>Pump pressure: <span id="pumppressure">--</span> PSI</p>
-   <p>Pump flow: <span id="pumpflow">--</span> GPM</p>
-   <p>Pump 1: <span id="pump1">--</span> </p>
-   <p>Pump 2: <span id="pump2">--</span> </p>
+    <h1>SCCG Greenhouse Webcam & Data</h1>
+    <img src="SCCG_TestImage.jpg" alt="Webcam Image">
+    <div id="data">Loading data...</div>
+    
+    <script>
+        // Fetch and display data from the text file
+        fetch('data.txt')
+            .then(response => response.text())
+            .then(text => {
+                const lines = text.trim().split('\n');
+                const latest = lines[lines.length - 1]; // Show the latest entry
+                document.getElementById('data').innerText = latest;
+            })
+            .catch(err => console.error('Error loading data:', err));
 
-   <script>
-	   async function updateValues() {
-   	   try {
-      	   const response = await fetch('/data');
-            const Data = await response.json();
-            document.getElementById('hoopghtemp').textContent = Data.hoopghtemp;
-            document.getElementById('hoopghrh').textContent = Data.hoopghrh;
-            document.getElementById('sunkenghtemp').textContent = Data.sunkenghtemp;
-				document.getElementById('littleghtemp').textContent = Data.littleghtemp;
-				document.getElementById('pumptemp').textContent = Data.pumptemp;
-				document.getElementById('pumppressure').textContent = Data.pumppressure;
-				document.getElementById('pumpflow').textContent = Data.pumpflow;
-				document.getElementById('pump1').textContent = Data.pump1;
-				document.getElementById('pump2').textContent = Data.pump2;
-				document.getElementById('sunkenghfan').textContent = Data.sunkenghfan;
-				document.getElementById('sunkenghvent').textContent = Data.sunkenghvent;
-				document.getElementById('littleghfan').textContent = Data.littleghfan;
-				document.getElementById('littleghvent').textContent = Data.littleghvent;
-
-			} catch (error) {
-        	 console.error("Error fetching data:", error);
-         }
-		}
-      setInterval(updateValues, 5000); // Refresh every 5 seconds
-      updateValues(); // Initial fetch
-	</script>
+        // Auto-refresh the page every 5 minutes (300,000 ms)
+        setInterval(() => location.reload(), 300000);
+    </script>
 </body>
 </html>
-index.html
-Displaying index.html.bac
-
