@@ -45,9 +45,11 @@
         	 console.error("Error fetching data:", error);
                  }
              }
-      count = setInterval(updateValues, 5000); // Refresh every 5 seconds
-      document.getElementById('pageUpdates') = count
+      count = 0;
       updateValues(); // Initial fetch
+      count = setInterval(updateValues, 5000); // Refresh every 5 seconds
+      document.getElementById('pageUpdates') = count;
+      
     </script>
 </body>
 </html>
