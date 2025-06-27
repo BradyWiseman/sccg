@@ -31,7 +31,7 @@
    <p>Pump flow: <span id="pumpflow">--</span> GPM</p>
    <p>Pump 1: <span id="pump1">--</span> </p>
    <p>Pump 2: <span id="pump2">--</span> </p>	
-   <p>Page updates: <span id="pageUpdates">--</span> </p>
+   <!-- <p>Page updates: <span id="pageUpdates">--</span> </p>  -->
    <p><span id="ErrorMessage"> </span></p>
 
    <script>
@@ -53,7 +53,7 @@
 				document.getElementById('sunkenghvent').textContent = Data.sunkenghvent;
 				document.getElementById('littleghfan').textContent = Data.littleghfan;
 				document.getElementById('littleghvent').textContent = Data.littleghvent;
-		                document.getElementById('pageUpdates').textContent = ++pageCount;
+		                //document.getElementById('pageUpdates').textContent = ++pageCount;
 
 		} catch (error) {
 		 document.getElementById('ErrorMessage').textContent = error;
