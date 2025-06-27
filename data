@@ -8,7 +8,7 @@
 "pumpflow": 0,
 "pump1": "Off",
 "pump2": "Off",
-"sunkenghfan": "Off",
+"sunkenghfan": "Auto",
 "sunkenghvent": 0,
 "littleghfan": "Off",
 "littleghvent": "Closed"
