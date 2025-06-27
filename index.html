@@ -39,6 +39,7 @@
 				document.getElementById('sunkenghvent').textContent = Data.sunkenghvent;
 				document.getElementById('littleghfan').textContent = Data.littleghfan;
 				document.getElementById('littleghvent').textContent = Data.littleghvent;
+		                document.getElementById('pageUpdates') = count;
 
 		} catch (error) {
 		 document.getElementById('sunkenghtemp').textContent = error;
@@ -48,8 +49,6 @@
       count = 0;
       updateValues(); // Initial fetch
       count = setInterval(updateValues, 5000); // Refresh every 5 seconds
-      document.getElementById('pageUpdates') = count;
-      
     </script>
 </body>
 </html>
