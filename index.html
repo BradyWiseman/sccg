@@ -23,7 +23,7 @@
    <script>
 	   async function updateValues() {
    	   try {
-      	    const response = await fetch('data');
+      	    const response = await fetch('/data');
             const Data = await response.json();
             document.getElementById('hoopghtemp').textContent = Data.hoopghtemp;
             document.getElementById('hoopghrh').textContent = Data.hoopghrh;
