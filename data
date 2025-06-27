@@ -1,0 +1,15 @@
+{
+"hoopghtemp": 71.4,
+"hoopghrh": 33,
+"sunkenghtemp": 73.1,
+"littleghtemp": 57.0,
+"pumptemp": 54.1,
+"pumppressure": 26.9,
+"pumpflow": 0,
+"pump1": "Off",
+"pump2": "Off",
+"sunkenghfan": "Off",
+"sunkenghvent": 0,
+"littleghfan": "Off",
+"littleghvent": "Closed"
+}
