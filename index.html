@@ -41,13 +41,12 @@
 				document.getElementById('sunkenghvent').textContent = Data.sunkenghvent;
 				document.getElementById('littleghfan').textContent = Data.littleghfan;
 				document.getElementById('littleghvent').textContent = Data.littleghvent;
-		                document.getElementById('pageUpdates').textContent = pageCount;
+		                document.getElementById('pageUpdates').textContent = ++pageCount;
 
 		} catch (error) {
 		 document.getElementById('ErrorMessage').textContent = error;
         	 console.error("Error fetching data:", error);
                  }
-		pageCount++;
              }
       updateValues(); // Initial fetch
       setInterval(updateValues, 5000); // Refresh every 5 seconds
