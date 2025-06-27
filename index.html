@@ -23,6 +23,7 @@
    <p><span id="ErrorMessage"> </span></p>
 
    <script>
+	   var pageCount = 0;
 	   async function updateValues() {
    	   try {
       	    const response = await fetch('data');
@@ -46,10 +47,11 @@
 		 document.getElementById('ErrorMessage').textContent = error;
         	 console.error("Error fetching data:", error);
                  }
+		pageCount++;
              }
       <!--count = 0; -->
       updateValues(); // Initial fetch
-      pageCount = setInterval(updateValues, 5000); // Refresh every 5 seconds
+      setInterval(updateValues, 5000); // Refresh every 5 seconds
     </script>
 </body>
 </html>
