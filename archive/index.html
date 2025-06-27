@@ -1,1 +1,36 @@
-/* test */
+
+<!-- archived index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Monitor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        img { max-width: 25%; height: auto; }
+        #data { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>SCCG Greenhouse Webcam & Data</h1>
+    <img src="SCCG_TestImage.jpg" alt="Webcam Image">
+    <div id="data">Loading data...</div>
+    
+    <script>
+        // Fetch and display data from the text file
+        fetch('data.txt')
+            .then(response => response.text())
+            .then(text => {
+                const lines = text.trim().split('\n');
+                const latest = lines[lines.length - 1]; // Show the latest entry
+                document.getElementById('data').innerText = latest;
+            })
+            .catch(err => console.error('Error loading data:', err));
+
+        // Auto-refresh the page every 5 minutes (300,000 ms)
+        setInterval(() => location.reload(), 300000);
+    </script>
+</body>
+</html>
+
