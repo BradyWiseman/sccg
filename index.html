@@ -20,6 +20,7 @@
    <p>Pump 1: <span id="pump1">--</span> </p>
    <p>Pump 2: <span id="pump2">--</span> </p>	
    <p>Page updates: <span id="pageUpdates">--</span> </p>
+   <p><span id="ErrorMessage"></p>
 
    <script>
 	   async function updateValues() {
@@ -42,7 +43,7 @@
 		                document.getElementById('pageUpdates') = count;
 
 		} catch (error) {
-		 document.getElementById('sunkenghtemp').textContent = error;
+		 document.getElementById('ErrorMessage').textContent = error;
         	 console.error("Error fetching data:", error);
                  }
              }
